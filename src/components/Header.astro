@@ -1,11 +1,77 @@
 ---
-
+const nav = [
+  {
+    href: '#section1',
+    label: 'section_1'
+  },
+  {
+    href: '#section2',
+    label: 'section_2'
+  },
+  {
+    href: '#section3',
+    label: 'section_3'
+  },
+  {
+    href: '#section4',
+    label: 'section_4'
+  },
+  {
+    href: '#section5',
+    label: 'section_5'
+  }
+]
 ---
 
-<div class="header">
-  <p><img src="./src/assets/img/logo.svg" alt=""></p>
-</div>
+
+<header class="header">
+  <div class="header__inner px-10 pt-4">
+    <h1 class="header__logo"><img src="./src/assets/img/logo.svg" alt="" width="" height=""></h1>
+    <nav class="header__nav">
+      <ul class="header__navList">
+        {nav.map((nav_item) => 
+          <li>
+            <a 
+              href={nav_item.href}
+              class="header__navLink text-base md:text-lg md:font-bold"
+            >
+              {nav_item.label}
+            </a>
+          </li>
+        )}
+      </ul>
+    </nav>
+  </div>
+</header>
+
 
 <style lang="scss">
+  @use '../assets/css/mixin.scss' as *;
   
+  .header {
+    background-color: pink;
+  }
+  .header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .header__logo {
+    img {
+
+    }
+  }
+  .header__navList {
+    display: flex;
+    @include mq-pc {
+      gap: 32px;
+    }
+
+    > li {
+      
+    }
+  }
+  .header__navLink {
+    
+  }
 </style>

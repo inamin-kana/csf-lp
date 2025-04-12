@@ -1,0 +1,18 @@
+@charset "UTF-8";
+@use './vars' as *;
+
+/* mediaquery
+======================================== */
+@mixin mq-pc {
+  @media screen and (min-width: $break-small + 1),
+  print {
+    @content;
+  }
+}
+
+@mixin mq-sp {
+  @media screen and (max-width: $break-small) {
+    @content;
+  }
+}
+
