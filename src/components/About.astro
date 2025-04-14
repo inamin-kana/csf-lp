@@ -1,0 +1,92 @@
+---
+---
+
+<div class="about py-16 md:py-22">
+  <div class="about__inner px-6 mx-auto xl:max-w-300">
+    <h2 class="titleA">About</h2>
+    <ul class="aboutBoxList">
+      <li class="aboutBox">
+        <h3 class="aboutBox__title -textGreen">BEFORE</h3>
+        <p class="aboutBox__text">Unsafe incidents go unreported. Staff stay silent.</p>
+        <p class="aboutBox__img"><img src="./src/assets/img/about/img01.png" srcset="./src/assets/img/about/img01.png 1x,./src/assets/img/about/img01@2x.png 2x" alt="Before image"></p>
+      </li>
+      <li class="aboutBox">
+        <h3 class="aboutBox__title -textRed">AFTER</h3>
+        <p class="aboutBox__text">Quick, safe, and anonymous reporting. Action gets taken.</p>
+        <p class="aboutBox__img"><img src="./src/assets/img/about/img02.png" srcset="./src/assets/img/about/img02.png 1x,./src/assets/img/about/img02@2x.png 2x" alt="After image"></p>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<style lang="scss">
+  @use '../assets/css/vars.scss' as *;
+  @use '../assets/css/mixin.scss' as *;
+
+  .about {
+    background-color: #fff;
+  }
+  .about__inner {
+  }
+  .aboutBoxList {
+    display: flex;
+    @include mq-pc {
+      gap: 0 40px;
+    }
+    @include mq-sp {
+      flex-direction: column;
+      gap: 24px 0;
+    }
+  }
+  .aboutBox {
+    background-color: $bgBlue1;
+    border-radius: 20px;
+    text-align: center;
+    position: relative;
+    @include mq-pc {
+      flex: 1;
+      padding: 40px 40px 32px;
+    }
+    @include mq-sp {
+      padding: 24px;
+    }
+  }
+  .aboutBox__title {
+    font-weight: 700;
+    @include mq-pc {
+      font-size: 24px;
+    }
+    @include mq-sp {
+      font-size: 20px;
+    }
+
+    &.-textGreen { color: $textGreen; }
+    &.-textRed { color: $textRed; }
+
+    & + * {
+      margin-top: 16px;
+    }
+  }
+  .aboutBox__text {
+    @include mq-pc {
+      font-size: 18px;
+    }
+    @include mq-sp {
+      font-size: 16px;
+      text-align: left;
+    }
+  }
+  .aboutBox__img {
+    width: 100%;
+    @include mq-pc {
+      margin-top: 54px;
+    }
+    @include mq-sp {
+      margin-top: 32px;
+    }
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+</style>
