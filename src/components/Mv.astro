@@ -3,6 +3,31 @@
 
 <div class="mv">
   <div class="mv__inner">
+    <h1 class="mv__title">Anonymous Incident Reporting <br>for a Safer Clinic Environment</h1>
+    <div class="hospitalWrap">
+      <span class="hospital"><img src="./src/assets/img/mv/hospital/hospital.svg" alt=""></span>
+      <span class="bg"><img src="./src/assets/img/mv/hospital/bg.svg" alt=""></span>
+      <span class="hospitalPerson01"><img src="./src/assets/img/mv/hospital/people01_hospital.svg" alt=""></span>
+      <span class="hospitalPerson02"><img src="./src/assets/img/mv/hospital/people02_hospital.svg" alt=""></span>
+      <span class="hospitalPerson03"><img src="./src/assets/img/mv/hospital/people03_hospital.svg" alt=""></span>
+      <span class="hospitalPerson04"><img src="./src/assets/img/mv/hospital/people04_hospital.svg" alt=""></span>
+      <span class="speechballoon01"><img src="./src/assets/img/mv/hospital/speechballoon01.svg" alt=""></span>
+      <span class="speechballoon02"><img src="./src/assets/img/mv/hospital/speechballoon02.svg" alt=""></span>
+      <span class="speechballoon03"><img src="./src/assets/img/mv/hospital/speechballoon03.svg" alt=""></span>
+      <span class="speechballoon04"><img src="./src/assets/img/mv/hospital/speechballoon04.svg" alt=""></span>
+    </div>
+    <span class="street"><img src="./src/assets/img/mv/street.svg" alt=""></span>
+    <span class="car"><img src="./src/assets/img/mv/car.svg" alt=""></span>
+    <div class="cityWrap">
+      <span class="hospital"><img src="./src/assets/img/mv/city/hospital.svg" alt=""></span>
+      <span class="ambulance"><img src="./src/assets/img/mv/city/ambulance.svg" alt=""></span>
+      <span class="buildings"><img src="./src/assets/img/mv/city/buildings.svg" alt=""></span>
+      <span class="trees"><img src="./src/assets/img/mv/city/trees.svg" alt=""></span>
+      <span class="people01"><img src="./src/assets/img/mv/city/people01.svg" alt=""></span>
+      <span class="people02"><img src="./src/assets/img/mv/city/people02.svg" alt=""></span>
+      <span class="people03"><img src="./src/assets/img/mv/city/people03.svg" alt=""></span>
+      <span class="people04"><img src="./src/assets/img/mv/city/people04.svg" alt=""></span>
+    </div>
   </div>
 </div>
 
@@ -13,10 +38,196 @@
 
   .mv {
     width: 100%;
-    height: 600px;
-    background-color: cadetblue;
+    height: auto;
+    max-height: (840/1536) * 100vw;
+    position: relative;
+    overflow: hidden;
+
+    &::after {
+      content: "";
+      position: absolute;
+      background-color: #EBEBEB;
+      width: 100%;
+      height: 100%;
+      bottom: -1px;
+      right: 0;
+      clip-path: polygon(100% 25%,8% 100%,100% 100%)
+    }
+  }
+  .mv__inner {
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  .mv__title {
+    font-weight: 700;
+    position: absolute;
+    @include mq-pc {
+      font-size: (36/1536) * 100vw;
+      top: 40px;
+      left: 60px;
+    }
+    @include mq-sp {
+      font-size: 40px;
+    }
   }
 
-  .mv__inner {
+  /* ////////// hospital ////////// */
+  .hospitalWrap {
+    > * {
+      display: block;
+      position: absolute;
+    }
+
+    .hospital {
+      @include mq-pc {
+        width: (456/1536) * 100vw;
+        top: (18/1536) * 100vw;
+        right: (192/1536) * 100vw;
+        transform: rotate(3deg);
+      }
+    }
+    .bg {
+      @include mq-pc {
+        width: (1038/1536) * 100vw;
+        top: (30/1536) * 100vw;
+        left: (-214/1536) * 100vw;
+      }
+    }
+    .hospitalPerson01 {
+      @include mq-pc {
+        width: (82.76/1536) * 100vw;
+        bottom: (260/1536) * 100vw;
+        left: (108/1536) * 100vw;
+      }
+    }
+    .hospitalPerson02 {
+      @include mq-pc {
+        width: (135.24/1536) * 100vw;
+        bottom: (267/1536) * 100vw;
+        left: (190/1536) * 100vw;
+      }
+    }
+    .hospitalPerson03 {
+      @include mq-pc {
+        width: (71.57/1536) * 100vw;
+        bottom: (420/1536) * 100vw;
+        left: (540/1536) * 100vw;
+      }
+    }
+    .hospitalPerson04 {
+      @include mq-pc {
+        width: (85.2/1536) * 100vw;
+        bottom: (420/1536) * 100vw;
+        left: (640/1536) * 100vw;
+      }
+    }
+    .speechballoon01 {
+      width: (43.4/1536) * 100vw;
+      bottom: (468/1536) * 100vw;
+      left: (158/1536) * 100vw;
+    }
+    .speechballoon02 {
+      width: (39.36/1536) * 100vw;
+      bottom: (422/1536) * 100vw;
+      left: (222/1536) * 100vw;
+    }
+    .speechballoon03 {
+      width: (46.94/1536) * 100vw;
+      bottom: (600/1536) * 100vw;
+      left: (580/1536) * 100vw;
+    }
+    .speechballoon04 {
+      width: (42.58/1536) * 100vw;
+      bottom: (610/1536) * 100vw;
+      left: (637/1536) * 100vw;
+    }
+  }
+  .street {
+    display: block;
+    width: 100%;
+    position: relative;
+    top: -5px;
+    right: 0px;
+    transform: rotate(9.5deg);
+    @include mq-pc {
+      width: 100%;
+      height: auto;
+    }
+  }
+  .car {
+    display: block;
+    position: absolute;
+    @include mq-pc {
+      width: (90/1536) * 100vw;
+      bottom: (110/1536) * 100vw;
+      left: (210/1536) * 100vw;
+      transform: rotate(5deg);
+    }
+  }
+  .cityWrap {
+    > * {
+      display: block;
+      position: absolute;
+      z-index: 1;
+    }
+
+    .hospital {
+      @include mq-pc {
+        width: (516/1536) * 100vw;
+        bottom: (174/1536) * 100vw;
+        right: (-16/1536) * 100vw;
+      }
+    }
+    .ambulance {
+      @include mq-pc {
+        width: (86.14/1536) * 100vw;
+        bottom: (224/1536) * 100vw;
+        right: (20/1536) * 100vw;
+      }
+    }
+    .buildings {
+      @include mq-pc {
+        width: (240/1536) * 100vw;
+        bottom: (173/1536) * 100vw;
+        right: (476/1536) * 100vw;
+      }
+    }
+    .trees {
+      @include mq-pc {
+        width: (105.69/1536) * 100vw;
+        bottom: (129/1536) * 100vw;
+        right: (711/1536) * 100vw;
+      }
+    }
+    .people01 {
+      @include mq-pc {
+        width: (46.6/1536) * 100vw;
+        bottom: (109/1536) * 100vw;
+        right: (911/1536) * 100vw;
+      }
+    }
+    .people02 {
+      @include mq-pc {
+        width: (71/1536) * 100vw;
+        bottom: (368/1536) * 100vw;
+        right: (367/1536) * 100vw;
+      }
+    }
+    .people03 {
+      @include mq-pc {
+        width: (78/1536) * 100vw;
+        bottom: (156/1536) * 100vw;
+        right: (367/1536) * 100vw;
+      }
+    }
+    .people04 {
+      @include mq-pc {
+        width: (95/1536) * 100vw;
+        bottom: (590/1536) * 100vw;
+        right: (10/1536) * 100vw;
+      }
+    }
   }
 </style>
