@@ -1,11 +1,28 @@
 ---
 ---
 
-<div class="aboutUs py-21 md:py-25">
+<section class="aboutUs py-21 md:py-25">
   <div class="aboutUs__inner px-6 mx-auto xl:max-w-300">
-    <h2 class="titleA">aboutUs</h2>
+    <h2 class="titleA">About Us</h2>
+    <p class="headingA">Meet the team behind this application.</p>
+    <ul class="profile__wrap">
+      <li class="profile -peron01">
+        <span class="profile__img"><img src="./src/assets/img/person01.jpg" srcset="./src/assets/img/person01.jpg 1x,./src/assets/img/person01@2x.jpg 2x" alt="Pragati"></span>
+        <h3 class="profile__name">Pragati</h3>
+        <p class="profile__description">Backend Developer & API Architect</p>
+      </li>
+      <li class="profile -peron02">
+        <span class="profile__img"><img src="./src/assets/img/person02.jpg" srcset="./src/assets/img/person02.jpg 1x,./src/assets/img/person02@2x.jpg 2x" alt="Kanako"></span>
+        <h3 class="profile__name">Kanako</h3>
+        <p class="profile__description">Frontend Developer & UI/UX Designer</p>
+      </li>
+    </ul>
+    <div class="aboutUs__foot">
+      <h3 class="aboutUs__footTitle">Why SafeReport Was Created</h3>
+      <p class="aboutUs__footText">SafeReport was created after a clinic director visited our FP center with a request: “A safe way for staff to report incidents is needed.” The challenge was taken up by our class, and different ideas were developed. After testing and presentations, our design was chosen for being simple and secure. A classroom task became a final project—and later, the SafeReport platform.</p>
+    </div>
   </div>
-</div>
+</section>
 
 <style lang="scss">
   @use '../assets/css/vars.scss' as *;
@@ -15,5 +32,84 @@
     background-color: $bgBlue2;
   }
   .aboutUs__inner {
+  }
+  .profile__wrap {
+    display: flex;
+    justify-content: center;
+
+    @include mq-pc {
+      gap: 0 124px;
+      margin-top: 64px;
+    }
+    @include mq-sp {
+      gap: 24px;
+      margin-top: 40px;
+    }
+  }
+  .profile {
+    text-align: center;
+    
+  }
+  .profile__img {
+    display: inline-block;
+    border-radius: 50%;
+    overflow: hidden;
+    @include mq-pc {
+      width: 200px;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    .-peron02 & {
+      img { transform: scale(1.3); }
+    }
+  }
+  .profile__name {
+    font-weight: 700;
+    @include mq-pc {
+      font-size: 28px;
+    }
+  }
+  .profile__description {
+    @include mq-pc {
+      font-size: 18px;
+    }
+  }
+  .aboutUs__foot {
+    // background: #fdfafa;
+    // box-shadow: 5px 5px 18px #b4c9e7,
+    // -5px -5px 18px #b4c9e7;
+    // border-radius: 20px;
+    background: #fff;
+    box-shadow: 5px 5px 18px #d5dde8,
+    -5px -5px 18px #fff;
+    border-radius: 20px;
+    padding: 40px;
+    @include mq-pc {
+      margin-top: 64px;
+    }
+    @include mq-sp {
+      margin-top: 40px;
+    }
+  }
+  .aboutUs__footTitle {
+    text-align: center;
+    font-weight: 700;
+    // color: $main;
+    @include mq-pc {
+      font-size: 28px;
+    }
+  }
+  .aboutUs__footText {
+    margin-top: 24px;
+    @include mq-pc {
+      font-size: 16px;
+    }
+    @include mq-sp {
+      font-size: 14px;
+    }
   }
 </style>
