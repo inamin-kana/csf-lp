@@ -42,7 +42,8 @@
       margin-top: 64px;
     }
     @include mq-sp {
-      gap: 24px;
+      flex-direction: column;
+      gap: 40px 0;
       margin-top: 40px;
     }
   }
@@ -52,11 +53,9 @@
   }
   .profile__img {
     display: inline-block;
+    width: 200px;
     border-radius: 50%;
     overflow: hidden;
-    @include mq-pc {
-      width: 200px;
-    }
 
     img {
       width: 100%;
@@ -72,11 +71,12 @@
     @include mq-pc {
       font-size: 28px;
     }
+    @include mq-sp {
+      font-size: 24px;
+    }
   }
   .profile__description {
-    @include mq-pc {
-      font-size: 18px;
-    }
+    font-size: 18px;
   }
   .aboutUs__foot {
     // background: #fdfafa;
@@ -96,20 +96,18 @@
     }
   }
   .aboutUs__footTitle {
-    text-align: center;
     font-weight: 700;
     // color: $main;
     @include mq-pc {
+      text-align: center;
       font-size: 28px;
+    }
+    @include mq-sp {
+      font-size: 24px;
     }
   }
   .aboutUs__footText {
     margin-top: 24px;
-    @include mq-pc {
-      font-size: 16px;
-    }
-    @include mq-sp {
-      font-size: 14px;
-    }
+    font-size: 16px;
   }
 </style>
