@@ -108,6 +108,11 @@
   }
   .aboutUs__footText {
     margin-top: 24px;
-    font-size: 16px;
+    @include mq-pc {
+      font-size: 18px;
+    }
+    @include mq-sp {
+      font-size: 16px;
+    }
   }
 </style>
