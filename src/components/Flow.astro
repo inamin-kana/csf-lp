@@ -1,9 +1,108 @@
 ---
 ---
 
-<div class="flow py-16 md:py-22">
-  <div class="flow__inner px-6 mx-auto xl:max-w-300">
-    <p class="">flow section</p>
+<div class="flow pt-16 md:pt-16">
+  <div class="flow__inner">
+    <div class="flow__head px-6 mx-auto xl:max-w-300">
+      <ol class="stepHeading">
+        <li class="-user">User</li>
+        <li class="-admin">Admin</li>
+      </ol>
+      <ol class="stepList flex items-center mx-auto w-8/12">
+        <li class="step flex w-full items-center after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-100 after:border-4 after:inline-block">
+          <div class="step__flow bg-gray-100 rounded-full lg:h-4 lg:w-4 shrink-0">
+            <!-- <span class="num font-medium">01</span> -->
+            <span class="heading">Home</span>
+          </div>
+        </li>
+        <li class="step flex w-full items-center after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-100 after:border-4 after:inline-block">
+          <div class="step__flow bg-gray-100 rounded-full lg:h-4 lg:w-4 shrink-0">
+            <!-- <span class="num font-medium">02</span> -->
+            <span class="heading">Form</span>
+          </div>
+        </li>
+        <li class="step flex w-full items-center after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-100 after:border-4 after:inline-block">
+          <div class="step__flow -activeAdmin bg-gray-100 rounded-full lg:h-4 lg:w-4 shrink-0">
+            <!-- <span class="num font-medium">03</span> -->
+            <span class="heading">Preview</span>
+          </div>
+        </li>
+        <li class="step flex w-full items-center after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-100 after:border-4 after:inline-block">
+          <div class="step__flow bg-gray-100 rounded-full lg:h-4 lg:w-4 shrink-0">
+            <!-- <span class="num font-medium">04</span> -->
+            <span class="heading"></span>
+          </div>
+        </li>
+        <li class="step flex w-full items-center after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-100 after:border-4 after:inline-block">
+          <div class="step__flow bg-gray-100 rounded-full lg:h-4 lg:w-4 shrink-0">
+            <!-- <span class="num font-medium">05</span> -->
+            <span class="heading">flow text4</span>
+          </div>
+        </li>
+        <li class="step flex w-full items-center after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-100 after:border-4 after:inline-block">
+          <div class="step__flow bg-gray-100 rounded-full lg:h-4 lg:w-4 shrink-0">
+            <!-- <span class="num font-medium">06</span> -->
+            <span class="heading">flow text4</span>
+          </div>
+        </li>
+        <li class="step flex w-full items-center after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-100 after:border-4 after:inline-block">
+          <div class="step__flow bg-gray-100 rounded-full lg:h-4 lg:w-4 shrink-0">
+            <!-- <span class="num font-medium">07</span> -->
+            <span class="heading">flow text4</span>
+          </div>
+        </li>
+        <li class="step flex items-center w-fit">
+          <div class="step__flow bg-gray-100 rounded-full lg:h-4 lg:w-4 shrink-0">
+            <!-- <span class="num font-medium">08</span> -->
+            <span class="heading">flow text5</span>
+          </div>
+        </li>
+      </ol>
+    </div>
+
+    <div class="panelWrap">
+      <section class="panel" data-index-panel="1">
+        <div class="panel__inner px-6 mx-auto xl:max-w-300">
+          <div class="panel__img"><img src="./src/assets/img/flow/step01.jpg" srcset="./src/assets/img/flow/step01.jpg 1x,./src/assets/img/flow/step01@2x.jpg 2x" alt="Pragati"></div>
+        </div>
+      </section>
+      <section class="panel" data-index-panel="2">
+        <div class="panel__inner px-6 mx-auto xl:max-w-300">
+          <div class="panel__img"><img src="./src/assets/img/flow/step02.jpg" srcset="./src/assets/img/flow/step02.jpg 1x,./src/assets/img/flow/step02@2x.jpg 2x" alt="Pragati"></div>
+          Section 2
+        </div>
+      </section>
+      <section class="panel" data-index-panel="3">
+        <div class="panel__inner px-6 mx-auto xl:max-w-300">
+          Section 3
+        </div>
+      </section>
+      <section class="panel" data-index-panel="4">
+        <div class="panel__inner px-6 mx-auto xl:max-w-300">
+          Section 4
+        </div>
+      </section>
+      <section class="panel" data-index-panel="5">
+        <div class="panel__inner px-6 mx-auto xl:max-w-300">
+          Section 5
+        </div>
+      </section>
+      <section class="panel" data-index-panel="6">
+        <div class="panel__inner px-6 mx-auto xl:max-w-300">
+          Section 6
+        </div>
+      </section>
+      <section class="panel" data-index-panel="7">
+        <div class="panel__inner px-6 mx-auto xl:max-w-300">
+          Section 7
+        </div>
+      </section>
+      <section class="panel" data-index-panel="8">
+        <div class="panel__inner px-6 mx-auto xl:max-w-300">
+          Section 8
+        </div>
+      </section>
+    </div>
   </div>
 </div>
 
@@ -13,7 +112,143 @@
   
   .flow {
     background-color: #fff;
+    overflow: hidden;
   }
   .flow__inner {
   }
+  .flow__head {
+    @include mq-pc {
+      display: flex;
+      // align-items: center;
+    }
+
+  }
+  .stepHeading {
+    @include mq-pc {
+      margin-top: -20px;
+    }
+
+    > li {
+      display: flex;
+      align-items: center;
+      font-weight: 700;
+      
+      &::before {
+        content: "";
+        width: .8em;
+        height: .8em;
+        border-radius: 50%;
+        margin-right: .5em;
+      }
+      &.-user::before { background-color: $colorUser; }
+      &.-admin::before { background-color: $colorAdmin;}
+
+      &:not(:first-of-type) {
+        margin-top: 8px;
+      }
+    }
+  }
+  .stepList {
+
+  }
+  .step {
+  }
+  .step__flow {
+    display: block;
+    // white-space: nowrap;
+    background-color: #eee;
+    position: relative;
+
+    &::after {
+      background: #eee;
+    }
+    .num {
+      // color: #fff;
+      display: block;
+      width: fit-content;
+      height: fit-content;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      margin: auto;
+    }
+    .heading {
+      display: block;
+      width: fit-content;
+      height: fit-content;
+      position: absolute;
+      top: -1.8em;
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+    }
+  }
+  .panelWrap {
+    display: flex;
+    // width: 300vw; // パネル3つ × 100vw
+    @include mq-pc {
+      margin-top: 32px;
+    }
+    @include mq-sp {
+      margin-top: 32px;
+    }
+  }
+  .panel {
+    flex: 0 0 100vw;
+    height: 100vh;
+    height: calc(100vh - #{(64px + 32px)});
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    // background: #f0f0f0;
+    // border-right: 1px solid #ccc;
+
+    &[data-index-panel="1"] {
+      background-color: pink;
+    }
+    &[data-index-panel="2"] {
+      background-color: green;
+    }
+    &[data-index-panel="3"] {
+      background-color: orange;
+    }
+  }
+  .panel__inner {
+    width: 100%;
+    height: 100%;
+    // background-color: #eee;
+  }
+  .panel__img {
+    display: flex;
+    justify-content: center;
+    @include mq-pc {
+      // width: 700px;
+      height: 60vh;
+      min-height: 450px;
+    }
+
+    img {
+      // width: 100%;
+      // height: auto;
+      height: 100%;
+    }
+  }
+
+
+  .step__flow {
+  transition: #eee;
+
+    &.active {
+      background-color: $colorUser;
+    }
+    &.active.-activeAdmin {
+      background-color: $colorAdmin;
+    }
+  }
+
 </style>
+
+<script type="module" src="/src/scripts/gsap-scroll.js"></script>

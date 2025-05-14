@@ -1,19 +1,228 @@
 ---
 ---
 
-<div class="flow py-16 md:py-22">
-  <div class="flow__inner px-6 mx-auto xl:max-w-300">
+<section class="teck py-21 md:py-25">
+  <div class="teck__inner px-6 mx-auto xl:max-w-300">
     <h2 class="titleA">Tech & Takeaways</h2>
+    <p class="headingA">The technical foundation of our project and what we learned along the way.</p>
+
+    <ul class="teckBoxList">
+      <li class="teckBox">
+        <h3 class="teckBox__title">
+          <span class="icon"><img src="./src/assets/img/teck/icon01_title.svg" alt=""></span>
+          Technologies Used
+        </h3>
+        <ul class="ulList">
+          <li><span class="colorMain">Frontend: </span>React.js, Vite</li>
+          <li><span class="colorMain">Backend: </span>Node.js, Express</li>
+          <li><span class="colorMain">Database: </span>MySQL</li>
+          <li><span class="colorMain">Auth: </span>JSON Web Tokens (JWT)</li>
+          <li><span class="colorMain">UI Design: </span>Figma, CSS, Bootstrap</li>
+        </ul>
+        <ul class="iconList">
+          <li><img src="./src/assets/img/teck/bootstrap.svg" alt=""></li>
+          <li><img src="./src/assets/img/teck/react.svg" alt=""></li>
+          <li><img src="./src/assets/img/teck/node.svg" alt=""></li>
+          <li><img src="./src/assets/img/teck/jwt.svg" alt=""></li>
+          <li><img src="./src/assets/img/teck/mysql.svg" alt=""></li>
+        </ul>
+      </li>
+      <li class="teckBox">
+        <h3 class="teckBox__title">
+          <span class="icon"><img src="./src/assets/img/teck/icon02_title.svg" alt=""></span>
+          Challenges We Faced
+        </h3>
+        <ul class="ulList">
+          <li>Implementing secure, role based access using JWT</li>
+          <li>Managing anonymous report submissions while maintaining data integrity</li>
+          <li>Coordination between frontend and backend development under time constraints</li>
+          <li>Linking files correctly with reports and handling large files or file type validations.</li>
+        </ul>
+      </li>
+    </ul>
+
+    <div class="teck__foot">
+      <h3 class="teck__footTit">
+        <span class="icon"><img src="./src/assets/img/teck/icon03_title.svg" alt=""></span>
+        What We Learned
+      </h3>
+      <p class="teck__footText">Throughout the project, we learned how to structure a secure backend API, manage session timeouts, apply token expiration logic, and implement automated email notifications. Our knowledge of React improved as well, especially in working with components, managing state, and building accessible, user-friendly interfaces. At the same time, our teamwork, Git collaboration, and project scoping skills grew stronger during the entire process.</p>
+    </div>
   </div>
-</div>
+</section>
 
 <style lang="scss">
   @use '../assets/css/vars.scss' as *;
   @use '../assets/css/mixin.scss' as *;
   
-  .flow {
+  .teck {
     background-color: #fff;
   }
-  .flow__inner {
+  .teck__inner {
+  }
+  .teckBoxList {
+    display: flex;
+    @include mq-pc {
+      margin-top: 64px;
+      gap: 0 40px;
+    }
+    @include mq-sp {
+      margin-top: 40px;
+      flex-direction: column;
+      gap: 24px 0;
+    }
+  }
+  .teckBox {
+    background: $bgBlue1;
+    box-shadow: 5px 5px 18px #d5dde8,
+                -5px -5px 18px #fff;
+    border-radius: 20px;
+    @include mq-pc {
+      flex: 1;
+      padding: 40px;
+    }
+    @include mq-sp {
+      width: 100%;
+      padding: 24px;
+    }
+  }
+  .teckBox__title {
+    // color: $textOrange;
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    gap: 12px;
+    @include mq-pc {
+      font-size: 28px;
+    }
+    @include mq-sp {
+      font-size: 20px;
+    }
+
+    > .icon {
+      width: 40px;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+  .iconList {
+    display: flex;
+    align-items: center;
+    @include mq-pc {
+      gap: 16px;
+      margin-top: 32px;
+    }
+    @include mq-sp {
+      margin-top: 24px;  
+    }
+
+    > li {
+      @include mq-pc {
+        transform: scale(.9);
+      }
+      @include mq-sp {
+        transform: scale(.7);
+      }
+
+      img {
+
+      }
+    }
+  } 
+  .ulList {
+    margin-top: 32px;
+    > li {
+      font-weight: 500;
+      position: relative;
+
+      @include mq-pc {
+        font-size: 20px;
+        padding-left: 1em;
+      }
+      @include mq-sp {
+        font-size: 18px;
+        padding-left: .8em;  
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        border-radius: 50%;
+        background-color: $main;
+        left: 0;
+        @include mq-pc {
+          width: .4em;
+          height: .4em;
+          top: .5em;
+        }
+        @include mq-sp {
+          width: .3em;
+          height: .3em;
+          top: .55em;
+        }
+      }
+
+      &:not(:first-of-type) {
+        margin-top: 8px;
+      }
+
+      .colorMain {
+        color: $main;
+        font-weight: 700;
+      }
+    }
+  }
+  .teck__foot {
+    background: $bgBlue1;
+    box-shadow: 5px 5px 18px #d5dde8,
+                -5px -5px 18px #fff;
+    border-radius: 20px;
+    @include mq-pc {
+      padding: 40px;
+      margin-top: 40px;
+    }
+    @include mq-sp {
+      padding: 24px;
+      margin-top: 24px;  
+    }
+  }
+  .teck__footTit {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    gap: 12px;
+    @include mq-pc {
+      font-size: 28px;
+    }
+    @include mq-sp {
+      font-size: 20px;
+    }
+
+    > .icon {
+      @include mq-pc {
+        width: 40px;
+      }
+      @include mq-sp {
+        width: 30px;
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+  .teck__footText {
+    @include mq-pc {
+      margin-top: 24px;
+      font-size: 18px;
+    }
+    @include mq-sp {
+      margin-top: 16px;
+      font-size: 16px;  
+    }
   }
 </style>
