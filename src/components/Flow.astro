@@ -128,11 +128,8 @@
   .flow__inner {
   }
   .flow__head {
-    // position: relative;
-    // z-index: 1;
     @include mq-pc {
       display: flex;
-      // align-items: center;
     }
 
   }
@@ -165,13 +162,9 @@
 
   }
   .step {
-    // &:nth-of-type(even) .heading {
-    //   top: 1.2em;
-    // }
   }
   .step__flow {
     display: block;
-    // white-space: nowrap;
     background-color: #eee;
     position: relative;
 
@@ -179,7 +172,6 @@
       background: #eee;
     }
     .num {
-      // color: #fff;
       display: block;
       width: fit-content;
       height: fit-content;
@@ -208,7 +200,6 @@
   }
   .panelWrap {
     display: flex;
-    // width: 300vw; // パネル3つ × 100vw
     @include mq-pc {
       margin-top: 54px;
     }
@@ -245,7 +236,6 @@
   .panel__inner {
     width: 100%;
     height: 100%;
-    // background-color: #eee;
   }
   .panel__img {
     display: flex;
@@ -261,7 +251,7 @@
       // min-height: 450px;
       width: 840px;
       height: 500px;
-      overflow: hidden;
+      overflow: scroll;
     }
 
     img {
