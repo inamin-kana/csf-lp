@@ -4,7 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 // ScrollTriggerを登録
 gsap.registerPlugin(ScrollTrigger);
 
-const slideNum = 8;
+const slideNum = 10;
 
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.querySelector(".panelWrap");
