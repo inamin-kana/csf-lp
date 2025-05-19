@@ -4,32 +4,26 @@
 <div class="mv">
   <div class="mv__inner">
     <h1 class="mv__title">Anonymous Incident Reporting <br>for a Safer Clinic Environment</h1>
+    <span class="mv__name"><img src="./src/assets/img/mv/name.png" srcset="./src/assets/img/mv/name.png 1x,./src/assets/img/mv/name@2x.png 2x" alt="By Pragati Juyal and Kanako Inamine"></span>
     <div class="hospitalWrap">
-      <span class="hospital"><img src="./src/assets/img/mv/hospital/hospital.svg" alt=""></span>
-      <span class="bg"><img src="./src/assets/img/mv/hospital/bg.svg" alt=""></span>
-      <span class="hospitalPerson01"><img src="./src/assets/img/mv/hospital/people01_hospital.svg" alt=""></span>
-      <span class="hospitalPerson02"><img src="./src/assets/img/mv/hospital/people02_hospital.svg" alt=""></span>
-      <span class="hospitalPerson03"><img src="./src/assets/img/mv/hospital/people03_hospital.svg" alt=""></span>
-      <span class="hospitalPerson04"><img src="./src/assets/img/mv/hospital/people04_hospital.svg" alt=""></span>
-      <span class="speechballoon01"><img src="./src/assets/img/mv/hospital/speechballoon01.svg" alt=""></span>
-      <span class="speechballoon02"><img src="./src/assets/img/mv/hospital/speechballoon02.svg" alt=""></span>
-      <span class="speechballoon03"><img src="./src/assets/img/mv/hospital/speechballoon03.svg" alt=""></span>
-      <span class="speechballoon04"><img src="./src/assets/img/mv/hospital/speechballoon04.svg" alt=""></span>
+      <span class="hospital"><img src="./src/assets/img/mv/hospital.svg" alt=""></span>
+      <span class="ambulance"><img src="./src/assets/img/mv/ambulance.svg" alt=""></span>
     </div>
-    <span class="street"><img src="./src/assets/img/mv/street.svg" alt=""></span>
-    <span class="car"><img src="./src/assets/img/mv/car.svg" alt=""></span>
-    <div class="cityWrap">
-      <span class="hospital"><img src="./src/assets/img/mv/city/hospital.svg" alt=""></span>
-      <span class="ambulance"><img src="./src/assets/img/mv/city/ambulance.svg" alt=""></span>
-      <span class="buildings"><img src="./src/assets/img/mv/city/buildings.svg" alt=""></span>
-      <span class="trees"><img src="./src/assets/img/mv/city/trees.svg" alt=""></span>
-      <span class="people01"><img src="./src/assets/img/mv/city/people01.svg" alt=""></span>
-      <span class="people02"><img src="./src/assets/img/mv/city/people02.svg" alt=""></span>
-      <span class="people03"><img src="./src/assets/img/mv/city/people03.svg" alt=""></span>
-      <span class="people04"><img src="./src/assets/img/mv/city/people04.svg" alt=""></span>
-      <span class="grass01"><img src="./src/assets/img/mv/city/grass01.svg" alt=""></span>
-      <span class="grass02"><img src="./src/assets/img/mv/city/grass02.svg" alt=""></span>
-      <span class="grass03"><img src="./src/assets/img/mv/city/grass03.svg" alt=""></span>
+    <div class="rightWrap">
+      <span class="illustRight01"><img src="./src/assets/img/mv/right/illustration01.svg" alt=""></span>
+      <span class="illustRight02"><img src="./src/assets/img/mv/right/illustration02.svg" alt=""></span>
+      <span class="illustRight03"><img src="./src/assets/img/mv/right/illustration03.svg" alt=""></span>
+      <span class="illustRight04"><img src="./src/assets/img/mv/right/illustration04.svg" alt=""></span>
+      <span class="illustRight05"><img src="./src/assets/img/mv/right/illustration05.svg" alt=""></span>
+      <span class="illustRight06"><img src="./src/assets/img/mv/right/illustration06.svg" alt=""></span>
+    </div>
+    <div class="leftWrap">
+      <span class="illustLeft01"><img src="./src/assets/img/mv/left/illustration01.svg" alt=""></span>
+      <span class="illustLeft02"><img src="./src/assets/img/mv/left/illustration02.svg" alt=""></span>
+      <span class="illustLeft03"><img src="./src/assets/img/mv/left/illustration03.svg" alt=""></span>
+      <span class="illustLeft04"><img src="./src/assets/img/mv/left/illustration04.svg" alt=""></span>
+      <span class="illustLeft05"><img src="./src/assets/img/mv/left/illustration05.svg" alt=""></span>
+      <span class="illustLeft06"><img src="./src/assets/img/mv/left/illustration06.svg" alt=""></span>
     </div>
   </div>
 </div>
@@ -41,40 +35,58 @@
   @use '../assets/css/mixin.scss' as *;
 
   .mv {
+    // background-color: #eee;
     width: 100%;
-    height: auto;
-    // max-height: (800/1536) * 100vw;
-    max-height: math.div(800, 1536) * 100vw;
+    height: 100vh;
+    // max-height: math.div(800, 1536) * 100vw;
     position: relative;
     overflow: hidden;
-
-    &::after {
-      content: "";
-      position: absolute;
-      background-color: #EBEBEB;
-      width: 100%;
-      height: 100%;
-      bottom: -1px;
-      right: 0;
-      clip-path: polygon(100% 27%,14% 100%,100% 100%);
+    @include mq-pc {
+      max-height: math.div(860, 1536) * 100vw;
+      padding: 100px 0;
     }
   }
   .mv__inner {
+    width: 100%;
+    @include mq-pc {
+      height: 100%;
+    }
+    @include mq-sp {
+      height: 450px;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      margin: auto;
+    }
     img {
       width: 100%;
       height: auto;
     }
   }
   .mv__title {
+    color: $main;
     font-weight: 700;
-    position: absolute;
+    font-family: $sub-font;
+    text-align: center;
     @include mq-pc {
-      font-size: (36/1536) * 100vw;
-      top: 40px;
-      left: 60px;
+      font-size: (46/1536) * 100vw;
     }
     @include mq-sp {
-      font-size: 40px;
+      font-size: 21px;
+    }
+  }
+  .mv__name {
+    display: flex;
+    justify-content: center;
+    margin: 32px auto 0;
+    @include mq-pc {
+      width: (455/1536) * 100vw;
+    }
+    @include mq-sp {
+      width: 230px;
+      margin-top: 16px;
     }
   }
 
@@ -86,176 +98,360 @@
     }
 
     .hospital {
+      right: 0;
+      left: 0;
+      margin: 0 auto;
       @include mq-pc {
-        width: (456/1536) * 100vw;
-        top: (18/1536) * 100vw;
-        right: (192/1536) * 100vw;
-        transform: rotate(3deg);
+        width: (512/1536) * 100vw;
+        // top: (400/1536) * 100vw;
+        bottom: (70/1536) * 100vw;
       }
-    }
-    .bg {
-      @include mq-pc {
-        width: (1038/1536) * 100vw;
-        top: (30/1536) * 100vw;
-        left: (-214/1536) * 100vw;
-      }
-    }
-    .hospitalPerson01 {
-      @include mq-pc {
-        width: (82.76/1536) * 100vw;
-        bottom: (260/1536) * 100vw;
-        left: (108/1536) * 100vw;
-      }
-    }
-    .hospitalPerson02 {
-      @include mq-pc {
-        width: (135.24/1536) * 100vw;
-        bottom: (267/1536) * 100vw;
-        left: (190/1536) * 100vw;
-      }
-    }
-    .hospitalPerson03 {
-      @include mq-pc {
-        width: (71.57/1536) * 100vw;
-        bottom: (420/1536) * 100vw;
-        left: (540/1536) * 100vw;
-      }
-    }
-    .hospitalPerson04 {
-      @include mq-pc {
-        width: (85.2/1536) * 100vw;
-        bottom: (420/1536) * 100vw;
-        left: (640/1536) * 100vw;
-      }
-    }
-    .speechballoon01 {
-      width: (43.4/1536) * 100vw;
-      bottom: (468/1536) * 100vw;
-      left: (158/1536) * 100vw;
-    }
-    .speechballoon02 {
-      width: (39.36/1536) * 100vw;
-      bottom: (422/1536) * 100vw;
-      left: (222/1536) * 100vw;
-    }
-    .speechballoon03 {
-      width: (46.94/1536) * 100vw;
-      bottom: (600/1536) * 100vw;
-      left: (580/1536) * 100vw;
-    }
-    .speechballoon04 {
-      width: (42.58/1536) * 100vw;
-      bottom: (610/1536) * 100vw;
-      left: (637/1536) * 100vw;
-    }
-  }
-  .street {
-    display: block;
-    width: 100%;
-    position: relative;
-    top: -5px;
-    right: 0px;
-    transform: rotate(9.5deg);
-    @include mq-pc {
-      width: 100%;
-      height: auto;
-    }
-  }
-  .car {
-    display: block;
-    position: absolute;
-    @include mq-pc {
-      width: (90/1536) * 100vw;
-      bottom: (110/1536) * 100vw;
-      left: (210/1536) * 100vw;
-      transform: rotate(5deg);
-    }
-  }
-  .cityWrap {
-    > * {
-      display: block;
-      position: absolute;
-      z-index: 1;
-    }
-
-    .hospital {
-      @include mq-pc {
-        width: (516/1536) * 100vw;
-        bottom: (134/1536) * 100vw;
-        right: (-16/1536) * 100vw;
+      @include mq-sp {
+        width: 230px;
+        top: 180px;
       }
     }
     .ambulance {
       @include mq-pc {
-        width: (86.14/1536) * 100vw;
-        bottom: (184/1536) * 100vw;
-        right: (20/1536) * 100vw;
+        width: (105/1536) * 100vw;
+        bottom: (80/1536) * 100vw;
+        // top: (617/1536) * 100vw;
+        right: (610/1536) * 100vw;
       }
-    }
-    .buildings {
-      @include mq-pc {
-        width: (240/1536) * 100vw;
-        bottom: (133/1536) * 100vw;
-        right: (476/1536) * 100vw;
-      }
-    }
-    .trees {
-      @include mq-pc {
-        width: (105.69/1536) * 100vw;
-        bottom: (89/1536) * 100vw;
-        right: (711/1536) * 100vw;
-      }
-    }
-    .people01 {
-      @include mq-pc {
-        width: (46.6/1536) * 100vw;
-        bottom: (109/1536) * 100vw;
-        right: (911/1536) * 100vw;
-      }
-    }
-    .people02 {
-      @include mq-pc {
-        width: (71/1536) * 100vw;
-        bottom: (328/1536) * 100vw;
-        right: (367/1536) * 100vw;
-      }
-    }
-    .people03 {
-      @include mq-pc {
-        width: (78/1536) * 100vw;
-        bottom: (116/1536) * 100vw;
-        right: (367/1536) * 100vw;
-      }
-    }
-    .people04 {
-      @include mq-pc {
-        width: (95/1536) * 100vw;
-        bottom: (545/1536) * 100vw;
-        right: (10/1536) * 100vw;
-      }
-    }
-    .grass01 {
-      z-index: 3;
-      @include mq-pc {
-        width: (1074/1536) * 100vw;
-        bottom: (0/1536) * 100vw;
-        right: (-40/1536) * 100vw;
-      }
-    }
-    .grass02 {
-      z-index: 2;
-      @include mq-pc {
-        width: (1081/1536) * 100vw;
-        bottom: (0/1536) * 100vw;
-        right: (-30/1536) * 100vw;
-      }
-    }
-    .grass03 {
-      @include mq-pc {
-        width: (1766/1536) * 100vw;
-        bottom: (-35/1536) * 100vw;
-        right: (-550/1536) * 100vw;
+      @include mq-sp {
+        width: 55px;
+        top: 268px;
+        right: 123px;
       }
     }
   }
+
+  /* ////////// rightWrap ////////// */
+  .rightWrap {
+    > * {
+      display: block;
+      position: absolute;
+    }
+
+    .illustRight01 {
+      @include mq-pc {
+        width: (120/1536) * 100vw;
+        top: (34/1536) * 100vw;
+        right: (190/1536) * 100vw;
+      }
+      @include mq-sp {
+        width: 45px;
+        top: 142px;
+        right: 55px;
+      }
+    }
+    .illustRight02 {
+      @include mq-pc {
+        width: (183.83/1536) * 100vw;
+        top: (263/1536) * 100vw;
+        right: (55/1536) * 100vw;
+      }
+      @include mq-sp {
+        width: 60px;
+        top: 243px;
+        right: 24px;
+      }
+    }
+    .illustRight03 {
+      @include mq-pc {   
+        width: (182.75/1536) * 100vw;
+        top: (330/1536) * 100vw;
+        right: (300/1536) * 100vw;
+      }
+      @include mq-sp {
+        width: 55px;
+        top: 314px;
+        right: 53px;
+      }
+    }
+    .illustRight04 {
+      @include mq-pc { 
+        width: (42.16/1536) * 100vw;
+        top: (512/1536) * 100vw;
+        right: (133/1536) * 100vw;
+      }
+      @include mq-sp {
+        display: none;
+      }
+    }
+    .illustRight05 {
+      @include mq-pc { 
+        width: (134.61/1536) * 100vw;
+        top: (600/1536) * 100vw;
+        right: (360/1536) * 100vw;
+      }
+      @include mq-sp {
+        display: none;
+      }
+    }
+    .illustRight06 {
+      @include mq-pc { 
+        width: (152/1536) * 100vw;
+        top: (670/1536) * 100vw;
+        right: (20/1536) * 100vw;
+      }
+      @include mq-sp {
+        display: none;
+      }
+    }
+  }
+  
+  /* ////////// leftWrap ////////// */
+  .leftWrap {
+    > * {
+      display: block;
+      position: absolute;
+    }
+
+    .illustLeft01 { 
+      @include mq-pc { 
+        width: (123.19/1536) * 100vw;
+        top: (40/1536) * 100vw;
+        left: (184/1536) * 100vw;
+      }
+      @include mq-sp {
+        width: 51px;
+        top: 158px;
+        left: 52px;
+      }
+    }
+    .illustLeft02 { 
+      @include mq-pc { 
+        width: (132/1536) * 100vw;
+        top: (231/1536) * 100vw;
+        left: (50/1536) * 100vw;
+      }
+      @include mq-sp {
+        width: 50px;
+        top: 247px;
+        left: 24px;
+      }
+    }
+    .illustLeft03 { 
+      @include mq-pc { 
+        width: (138/1536) * 100vw;
+        top: (310/1536) * 100vw;
+        left: (300/1536) * 100vw;
+      }
+      @include mq-sp {
+        width: 49px;
+        top: 308px;
+        left: 45px;
+      }
+    }
+    .illustLeft04 { 
+      @include mq-pc { 
+        width: (86/1536) * 100vw;
+        top: (500/1536) * 100vw;
+        left: (130/1536) * 100vw;
+      }
+      @include mq-sp {
+        display: none;
+      }
+    }
+    .illustLeft05 { 
+      @include mq-pc { 
+        width: (120/1536) * 100vw;
+        top: (630/1536) * 100vw;
+        left: (360/1536) * 100vw;
+      }
+      @include mq-sp {
+        display: none;
+      }
+    }
+    .illustLeft06 { 
+      @include mq-pc { 
+        width: (111/1536) * 100vw;
+        top: (690/1536) * 100vw;
+        left: (30/1536) * 100vw;
+      }
+      @include mq-sp {
+        display: none;
+      }
+    }
+  }
+  // .hospitalWrap {
+  //   > * {
+  //     display: block;
+  //     position: absolute;
+  //   }
+
+  //   .hospital {
+  //     @include mq-pc {
+  //       width: (456/1536) * 100vw;
+  //       top: (18/1536) * 100vw;
+  //       right: (192/1536) * 100vw;
+  //       transform: rotate(3deg);
+  //     }
+  //   }
+  //   .bg {
+  //     @include mq-pc {
+  //       width: (1038/1536) * 100vw;
+  //       top: (30/1536) * 100vw;
+  //       left: (-214/1536) * 100vw;
+  //     }
+  //   }
+  //   .hospitalPerson01 {
+  //     @include mq-pc {
+  //       width: (82.76/1536) * 100vw;
+  //       bottom: (260/1536) * 100vw;
+  //       left: (108/1536) * 100vw;
+  //     }
+  //   }
+  //   .hospitalPerson02 {
+  //     @include mq-pc {
+  //       width: (135.24/1536) * 100vw;
+  //       bottom: (267/1536) * 100vw;
+  //       left: (190/1536) * 100vw;
+  //     }
+  //   }
+  //   .hospitalPerson03 {
+  //     @include mq-pc {
+  //       width: (71.57/1536) * 100vw;
+  //       bottom: (420/1536) * 100vw;
+  //       left: (540/1536) * 100vw;
+  //     }
+  //   }
+  //   .hospitalPerson04 {
+  //     @include mq-pc {
+  //       width: (85.2/1536) * 100vw;
+  //       bottom: (420/1536) * 100vw;
+  //       left: (640/1536) * 100vw;
+  //     }
+  //   }
+  //   .speechballoon01 {
+  //     width: (43.4/1536) * 100vw;
+  //     bottom: (468/1536) * 100vw;
+  //     left: (158/1536) * 100vw;
+  //   }
+  //   .speechballoon02 {
+  //     width: (39.36/1536) * 100vw;
+  //     bottom: (422/1536) * 100vw;
+  //     left: (222/1536) * 100vw;
+  //   }
+  //   .speechballoon03 {
+  //     width: (46.94/1536) * 100vw;
+  //     bottom: (600/1536) * 100vw;
+  //     left: (580/1536) * 100vw;
+  //   }
+  //   .speechballoon04 {
+  //     width: (42.58/1536) * 100vw;
+  //     bottom: (610/1536) * 100vw;
+  //     left: (637/1536) * 100vw;
+  //   }
+  // }
+  // .street {
+  //   display: block;
+  //   width: 100%;
+  //   position: relative;
+  //   top: -5px;
+  //   right: 0px;
+  //   transform: rotate(9.5deg);
+  //   @include mq-pc {
+  //     width: 100%;
+  //     height: auto;
+  //   }
+  // }
+  // .car {
+  //   display: block;
+  //   position: absolute;
+  //   @include mq-pc {
+  //     width: (90/1536) * 100vw;
+  //     bottom: (110/1536) * 100vw;
+  //     left: (210/1536) * 100vw;
+  //     transform: rotate(5deg);
+  //   }
+  // }
+  // .cityWrap {
+  //   > * {
+  //     display: block;
+  //     position: absolute;
+  //     z-index: 1;
+  //   }
+
+  //   .hospital {
+  //     @include mq-pc {
+  //       width: (516/1536) * 100vw;
+  //       bottom: (134/1536) * 100vw;
+  //       right: (-16/1536) * 100vw;
+  //     }
+  //   }
+  //   .ambulance {
+  //     @include mq-pc {
+  //       width: (86.14/1536) * 100vw;
+  //       bottom: (184/1536) * 100vw;
+  //       right: (20/1536) * 100vw;
+  //     }
+  //   }
+  //   .buildings {
+  //     @include mq-pc {
+  //       width: (240/1536) * 100vw;
+  //       bottom: (133/1536) * 100vw;
+  //       right: (476/1536) * 100vw;
+  //     }
+  //   }
+  //   .trees {
+  //     @include mq-pc {
+  //       width: (105.69/1536) * 100vw;
+  //       bottom: (89/1536) * 100vw;
+  //       right: (711/1536) * 100vw;
+  //     }
+  //   }
+  //   .people01 {
+  //     @include mq-pc {
+  //       width: (46.6/1536) * 100vw;
+  //       bottom: (109/1536) * 100vw;
+  //       right: (911/1536) * 100vw;
+  //     }
+  //   }
+  //   .people02 {
+  //     @include mq-pc {
+  //       width: (71/1536) * 100vw;
+  //       bottom: (328/1536) * 100vw;
+  //       right: (367/1536) * 100vw;
+  //     }
+  //   }
+  //   .people03 {
+  //     @include mq-pc {
+  //       width: (78/1536) * 100vw;
+  //       bottom: (116/1536) * 100vw;
+  //       right: (367/1536) * 100vw;
+  //     }
+  //   }
+  //   .people04 {
+  //     @include mq-pc {
+  //       width: (95/1536) * 100vw;
+  //       bottom: (545/1536) * 100vw;
+  //       right: (10/1536) * 100vw;
+  //     }
+  //   }
+  //   .grass01 {
+  //     z-index: 3;
+  //     @include mq-pc {
+  //       width: (1074/1536) * 100vw;
+  //       bottom: (0/1536) * 100vw;
+  //       right: (-40/1536) * 100vw;
+  //     }
+  //   }
+  //   .grass02 {
+  //     z-index: 2;
+  //     @include mq-pc {
+  //       width: (1081/1536) * 100vw;
+  //       bottom: (0/1536) * 100vw;
+  //       right: (-30/1536) * 100vw;
+  //     }
+  //   }
+  //   .grass03 {
+  //     @include mq-pc {
+  //       width: (1766/1536) * 100vw;
+  //       bottom: (-35/1536) * 100vw;
+  //       right: (-550/1536) * 100vw;
+  //     }
+  //   }
+  // }
 </style>
