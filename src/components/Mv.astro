@@ -37,13 +37,16 @@
   .mv {
     // background-color: #eee;
     width: 100%;
-    height: 100vh;
+    // height: 100vh;
     // max-height: math.div(800, 1536) * 100vw;
     position: relative;
     overflow: hidden;
     @include mq-pc {
-      max-height: math.div(860, 1536) * 100vw;
+      height: math.div(860, 1536) * 100vw;
       padding: 100px 0;
+    }
+    @include mq-sp {
+      height: 100vh;
     }
   }
   .mv__inner {
@@ -52,7 +55,7 @@
       height: 100%;
     }
     @include mq-sp {
-      height: 450px;
+      height: 400px;
       position: absolute;
       top: 0;
       bottom: 0;

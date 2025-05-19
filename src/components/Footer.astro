@@ -3,7 +3,7 @@
 
 <footer class="footer">
   <div class="footer__inner p-6 text-center">
-    <p class="footer__copy">Copyright&copy;</p>
+    <p class="footer__copy">&copy; Copyright 2025, Pragati Juyal and Kanako Inamine</p>
   </div>
 </footer>
 
@@ -19,6 +19,11 @@
 
   }
   .footer__copy {
-
+    @include mq-pc {
+      font-size: 12px;
+    }
+    @include mq-sp {
+      font-size: 10px;
+    }
   }
 </style>
