@@ -6,8 +6,8 @@ gsap.registerPlugin(ScrollTrigger);
 const slideNum = 10;
 
 document.addEventListener("DOMContentLoaded", () => {
-  const container = document.querySelector(".panelWrap");
-  const steps = document.querySelectorAll(".step__flow");
+  const container = document.querySelector(".panelWrap") as HTMLElement | null;
+  const steps = document.querySelectorAll(".step__flow") as NodeListOf<HTMLElement>;
 
   if (!container) return;
 
@@ -20,9 +20,9 @@ document.addEventListener("DOMContentLoaded", () => {
       scrub: 1,
       end: () => "+=" + container.offsetWidth,
       snap: {
-        snapTo: 1 / (slideNum - 1), // 各スライドごとにスナップ
-        duration: { min: 0.2, max: 0.6 }, // スナップアニメーション速度
-        ease: "power1.inOut"
+        snapTo: 1 / (slideNum - 1),
+        duration: { min: 0.2, max: 0.6 },
+        ease: "power1.inOut",
       },
       onUpdate: (self) => {
         const progress = self.progress;
@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
         steps.forEach((step, i) => {
           step.classList.toggle("active", i === currentStep);
         });
-      }
+      },
     },
   });
 });

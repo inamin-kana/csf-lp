@@ -3,8 +3,10 @@
 
 <div class="mv">
   <div class="mv__inner">
-    <h1 class="mv__title">Anonymous Incident Reporting <br>for a Safer Clinic Environment</h1>
-    <span class="mv__name"><img src="./src/assets/img/mv/name.png" srcset="./src/assets/img/mv/name.png 1x,./src/assets/img/mv/name@2x.png 2x" alt="By Pragati Juyal and Kanako Inamine"></span>
+    <div class="headingWrap">
+      <h1 class="mv__title">Anonymous Incident Reporting <br>for a Safer Clinic Environment</h1>
+      <span class="mv__name"><img src="./src/assets/img/mv/name.png" srcset="./src/assets/img/mv/name.png 1x,./src/assets/img/mv/name@2x.png 2x" alt="By Pragati Juyal and Kanako Inamine"></span>
+    </div>
     <div class="hospitalWrap">
       <span class="hospital"><img src="./src/assets/img/mv/hospital.svg" alt=""></span>
       <span class="ambulance"><img src="./src/assets/img/mv/ambulance.svg" alt=""></span>
@@ -28,6 +30,7 @@
   </div>
 </div>
 
+<script type="module" src="/src/scripts/mvIntro.ts"></script>
 
 <style lang="scss">
   @use 'sass:math';
@@ -65,6 +68,18 @@
       height: auto;
     }
   }
+  .headingWrap {
+    /* INTRO ANIMATION */
+    opacity: 0;
+    transform: translateY(-40px);
+    transition: transform 1.5s, opacity 1.5s;
+    @at-root {
+      body.-loaded .headingWrap {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
   .mv__title {
     color: $main;
     font-weight: 700;
@@ -80,30 +95,49 @@
   .mv__name {
     display: flex;
     justify-content: center;
-    margin: 32px auto 0;
+    margin: 24px auto 0;
     @include mq-pc {
       width: (455/1536) * 100vw;
     }
     @include mq-sp {
       width: 230px;
-      margin-top: 16px;
+      margin-top: 32px;
     }
   }
 
   /* ////////// hospital ////////// */
   .hospitalWrap {
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    @include mq-pc {
+      bottom: (120/1536) * 100vw;
+    }
+    @include mq-sp {
+      bottom: 74px;
+    }
+
+    /* INTRO ANIMATION */
+    opacity: 0;
+    transform: translateY(40px);
+    transition: transform 1.5s, opacity 1.5s;
+    @at-root {
+      body.-loaded .hospitalWrap {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
     > * {
       display: block;
-      position: absolute;
     }
 
     .hospital {
-      right: 0;
-      left: 0;
-      margin: 0 auto;
       @include mq-pc {
-        width: (512/1536) * 100vw;
-        bottom: (70/1536) * 100vw;
+        width: (500/1536) * 100vw;
       }
       @include mq-sp {
         width: 230px;
@@ -111,21 +145,39 @@
       }
     }
     .ambulance {
+      position: absolute;
       @include mq-pc {
         width: (105/1536) * 100vw;
-        bottom: (80/1536) * 100vw;
-        right: (610/1536) * 100vw;
+        bottom: (20/1536) * 100vw;
+        right: (80/1536) * 100vw;
       }
       @include mq-sp {
         width: 55px;
-        top: 268px;
-        right: 123px;
+        bottom: 0;
+        right: 35px;
       }
     }
   }
 
   /* ////////// rightWrap ////////// */
   .rightWrap {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    /* INTRO ANIMATION */
+    opacity: 0;
+    transform: scale(1.5);
+    transition: transform 1.5s, opacity 1.5s;
+    @at-root {
+      body.-loaded .rightWrap {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
     > * {
       display: block;
       position: absolute;
@@ -201,6 +253,23 @@
   
   /* ////////// leftWrap ////////// */
   .leftWrap {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    /* INTRO ANIMATION */
+    opacity: 0;
+    transform: scale(1.5);
+    transition: transform 1.5s, opacity 1.5s;
+    @at-root {
+      body.-loaded .leftWrap {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
     > * {
       display: block;
       position: absolute;
