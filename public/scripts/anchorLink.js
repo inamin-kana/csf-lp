@@ -4,13 +4,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   links.forEach(link => {
     link.addEventListener('click', (e) => {
-      const targetId = (link as HTMLAnchorElement).getAttribute('href');
-      if (!targetId || !targetId.startsWith('#')) return;
-
-      const target = document.querySelector(targetId);
-      if (!target) return;
-
       e.preventDefault();
+
+      const href = link.getAttribute('href');
+      if (!href || !href.startsWith('#')) return;
+
+      const target = document.querySelector(href);
+      if (!target) return;
 
       const top = target.getBoundingClientRect().top + window.scrollY - offset;
 
