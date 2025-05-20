@@ -273,12 +273,12 @@ import GsapScroll from '../components/GsapScroll.jsx';
 
     img {
       width: 100%;
-      height: max-content;
-      // @include mq-pc {
-      // }
-      // @include mq-sp {
-      //   height: auto;
-      // }
+      @include mq-pc {
+        height: max-content;
+      }
+      @include mq-sp {
+        height: auto;
+      }
     }
   }
 
