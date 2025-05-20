@@ -257,6 +257,7 @@ import GsapScroll from '../components/GsapScroll.jsx';
     display: flex;
     justify-content: center;
     // bottom: 0;
+    overflow: scroll;
     @include mq-pc {
       width: 900px;
       height: 536px;
@@ -265,7 +266,6 @@ import GsapScroll from '../components/GsapScroll.jsx';
       right: 0;
       left: 0;
       margin: 0 auto;
-      overflow: scroll;
     }
     @include mq-sp {
       margin-top: 64px;
@@ -273,12 +273,12 @@ import GsapScroll from '../components/GsapScroll.jsx';
 
     img {
       width: 100%;
-      @include mq-pc {
-        height: max-content;
-      }
-      @include mq-sp {
-        height: auto;
-      }
+      height: max-content;
+      // @include mq-pc {
+      // }
+      // @include mq-sp {
+      //   height: auto;
+      // }
     }
   }
 
