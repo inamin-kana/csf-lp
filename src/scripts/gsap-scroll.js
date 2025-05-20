@@ -3,11 +3,10 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const slideNum = 10;
-
 document.addEventListener("DOMContentLoaded", () => {
-  const container = document.querySelector(".panelWrap") as HTMLElement | null;
-  const steps = document.querySelectorAll(".step__flow") as NodeListOf<HTMLElement>;
+  const slideNum = 10;
+  const container = document.querySelector(".panelWrap");
+  const steps = document.querySelectorAll(".step__flow");
 
   if (!container) return;
 
