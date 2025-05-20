@@ -1,5 +1,6 @@
 ---
-import gsapScrollUrl from '../scripts/gsap-scroll.js?url';
+// import gsapScrollUrl from '../scripts/gsap-scroll.js?url';
+import GsapScroll from '../components/GsapScroll.jsx';
 ---
 
 <div id="section03" class="flow pt-10 md:pt-16">
@@ -118,7 +119,8 @@ import gsapScrollUrl from '../scripts/gsap-scroll.js?url';
   </div>
 </div>
 
-<script type="module" src={gsapScrollUrl}></script>
+<!-- <script type="module" src={gsapScrollUrl}></script> -->
+<GsapScroll client:only="react" />
 
 <style lang="scss">
   @use '../assets/css/vars.scss' as *;
