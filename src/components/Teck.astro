@@ -41,12 +41,21 @@
       </li>
     </ul>
 
+    
     <div class="teck__foot">
       <h3 class="teck__footTit">
         <span class="icon"><img src="./img/teck/icon03_title.svg" alt=""></span>
         What We Learned
       </h3>
       <p class="teck__footText">Throughout the project, we learned how to structure a secure backend API, manage session timeouts, apply token expiration logic, and implement automated email notifications. Our knowledge of React improved as well, especially in working with components, managing state, and building accessible, user-friendly interfaces. At the same time, our teamwork, Git collaboration, and project scoping skills grew stronger during the entire process.</p>
+    </div>
+    
+    <div class="teck__foot">
+      <h3 class="teck__footTit">
+        <span class="icon"><img src="./img/teck/github.svg" alt=""></span>
+        Git
+      </h3>
+      <a href="https://github.com/Project-CSF-2025" class="teck__footLink" target="_blank" rel=”noopener noreferrer”>https://github.com/Project-CSF-2025</a>
     </div>
   </div>
 </section>
@@ -216,6 +225,22 @@
     @include mq-sp {
       margin-top: 16px;
       font-size: 16px;  
+    }
+  }
+  .teck__footLink {
+    display: block;
+    text-decoration: underline;
+    @include mq-pc {
+      margin-top: 24px;
+      font-size: 18px;
+    }
+    @include mq-sp {
+      margin-top: 16px;
+      font-size: 16px;  
+    }
+
+    &:hover {
+      text-decoration: none;
     }
   }
 </style>
